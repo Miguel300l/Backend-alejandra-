@@ -2,59 +2,47 @@ import { Schema, model } from 'mongoose';
 
 const eventosSchema = new Schema(
     {
-        titulo:{
+        titulo: {
             type: String,
             required: true
         },
-        descripcion:{
+        descripcion: {
             type: String,
             required: true
         },
-        imagen:{
-            idImg:{
+        imagen: {
+            idImg: {
                 type: String,
                 default: null
             },
-            urlImg:{
+            urlImg: {
                 type: String,
                 default: null
             }
         },
-        pdf:{
-            idPdf:{
+        pdf: {
+            idPdf: {
                 type: String,
                 default: null
             },
-            urlPdf:{
+            urlPdf: {
                 type: String,
                 default: null
             }
         },
-        fecha_inicio:{
-            type: Date,
-            required: true
-        },
-        fecha_final:{
-            type: Date,
-            required: true
-        },
-        tipo:{
-            type: String,
-            required: true,
-            enum: ['destacado', 'noticia', 'cronograma']
-        },
-        estado:{
+
+        estado: {
             type: Boolean,
             default: true
         },
-        lugar:{
-            type:String,
-            default:null
+        lugar: {
+            type: String,
+            default: null
         }
 
     },
     {
-        timestamps:true,
+        timestamps: true,
         versionKey: false
     }
 )
