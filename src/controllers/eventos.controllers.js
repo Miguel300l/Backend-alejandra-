@@ -102,7 +102,7 @@ export const actualizarEvento = async (req, res) => {
       urlImg = fotoEvento.secure_url;
 
 
-      await Eventos.findByIdAndUpdate(id, {
+      await Eventos.findByIdAndDelete(id, {
 
         'imagen.idImg': idImg,
         'imagen.urlImg': urlImg,
@@ -124,7 +124,7 @@ export const actualizarEvento = async (req, res) => {
       idImg = fotoEvento.public_id;
       urlImg = fotoEvento.secure_url;
 
-      await Eventos.findByIdAndUpdate(id, {
+      await Eventos.findByIdAndDelete(id, {
 
         'imagen.idImg': idImg,
         'imagen.urlImg': urlImg,
@@ -157,7 +157,7 @@ export const actualizarEvento = async (req, res) => {
       idPdf = pdfEvento.public_id;
       urlPdf = pdfEvento.secure_url;
 
-      await Eventos.findByIdAndUpdate(id, {
+      await Eventos.findByIdAndDelete(id, {
 
         'tipo': tipo,
         'titulo': titulo,
@@ -175,7 +175,7 @@ export const actualizarEvento = async (req, res) => {
 
     else {
 
-      await Eventos.findByIdAndUpdate(id, {
+      await Eventos.findByIdAndDelete(id, {
         'tipo': tipo,
         'titulo': titulo,
         'fecha_inicio': fecha_inicio,
@@ -185,7 +185,7 @@ export const actualizarEvento = async (req, res) => {
 
       }, { new: true });
     }
-    res.status(200).json("Evento Actualizado");
+    res.status(200).json("Pensamiento Eliminado");
   } catch (error) {
     console.log(error);
     return res.status(500).json("Error en el servidor");
