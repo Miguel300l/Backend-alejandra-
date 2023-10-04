@@ -1,6 +1,6 @@
 import { Router } from 'express';
 // controllers
-import { actualizarEvento, crearEvento, verEventos } from '../controllers/eventos.controllers.js';
+import { eliminarEvento, crearEvento, verEventos } from '../controllers/eventos.controllers.js';
 // Verificaciones
 // imagenes
 import multer from 'multer';
@@ -14,7 +14,7 @@ const router = Router();
 const inputImg = upload.fields([{ name: 'eventoImg', maxCount: 1 }]);
 router.post("/crearEventos", inputImg, crearEvento);
 router.get("/verEventos", verEventos);
-router.delete("/actualizarEvento/:id", inputImg, actualizarEvento);
+router.delete("/eliminarEvento/:id", inputImg, eliminarEvento);
 
 
 export default router;
